@@ -1,4 +1,4 @@
-package prelude
+package chapter_00_prelude
 
 import java.util.concurrent.atomic.AtomicInteger
 import scala.util.Random
@@ -7,25 +7,25 @@ object ControlStructures extends App {
   val random = new Random()
 
   println("- If statement")
-  println(ifStatement())
-  println(ternaryOperator())
+  println(ifStatement)
+  println(ternaryOperator)
 
   println("\n- Match statement")
   println(matchOperator(random.nextInt(5)))
   println(getClassAsString(5))
 
   println("\n- Try catch")
-  println(tryCatch())
+  println(tryCatch)
 
   // ------ Loops --------
   println("\n\n-- LOOPS --")
   println("\n- for loop")
-  println(forLoop())
+  println(forLoop)
   println("\n- do while")
   println(doWhileLoop())
 
   // Traditional if
-  def ifStatement(): String = {
+  def ifStatement: String = {
 
     if (random.nextBoolean()) {
       "True"
@@ -37,7 +37,7 @@ object ControlStructures extends App {
   }
 
   // Ternary operator
-  def ternaryOperator(): String = if (random.nextInt() > 0) "Positive number generated" else "Negative number generated"
+  def ternaryOperator: String = if (random.nextInt() > 0) "Positive number generated" else "Negative number generated"
 
   // Match operator
   def matchOperator(number: Int): String = number match {
@@ -48,17 +48,18 @@ object ControlStructures extends App {
   }
 
   def getClassAsString(x: Any): String = x match {
-    case s: String => s + " is a String"
-    case i: Int => "Int"
-    case f: Float => "Float"
+    case s: String  => s + " is a String"
+    case i: Int     => "Int"
+    case f: Float   => "Float"
     case l: List[_] => "List"
-    case _ => "Unknown"
+    case _          => "Unknown"
   }
 
   // Try catch
-  def division(divisor: Double, dividend: Double): Double = if (dividend == 0) throw new Exception("0 division") else divisor / dividend
+  def division(divisor: Double, dividend: Double): Double =
+    if (dividend == 0) throw new Exception("0 division") else divisor / dividend
 
-  def tryCatch(): Double = {
+  def tryCatch: Double = {
     try {
       division(random.between(2, 8), random.between(0, 1))
     } catch {
@@ -66,9 +67,8 @@ object ControlStructures extends App {
     }
   }
 
-
   // for loop
-  def forLoop(): IndexedSeq[Int] = {
+  def forLoop: IndexedSeq[Int] = {
     for (arg <- args) println(arg)
 
     // "x to y" syntax
@@ -77,6 +77,7 @@ object ControlStructures extends App {
     // "x to y by" syntax
     for (i <- 0 to 10 by 2) println(i)
 
+    // yield results to a iterable
     for (i <- 1 to 5) yield i * 2
   }
 

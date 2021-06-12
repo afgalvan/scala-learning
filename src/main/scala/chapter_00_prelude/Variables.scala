@@ -1,4 +1,4 @@
-package prelude
+package chapter_00_prelude
 
 object Variables extends App {
   val x = 1 // Immutable
