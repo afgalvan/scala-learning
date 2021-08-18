@@ -7,8 +7,8 @@ Learning of scala programming language fundamentals following the *[Scala Book](
 
 ## Chapters
 
-- [Prelude](src/main/scala/prelude)
-- [Preliminaries](src/main/scala/preliminaries)
+- [Prelude](src/main/scala/chapter_00_prelude)
+- [Preliminaries](src/main/scala/chapter_01_preliminaries)
 - [Control Structures](src/main/scala/control/structures)
 - [Classes](src/main/scala/classes)
 - [Traits](src/main/scala/traits)
